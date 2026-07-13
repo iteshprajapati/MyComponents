@@ -736,6 +736,33 @@ export const ShowcaseApp = () => {
                     <span>{copied ? 'Copied!' : 'Copy Code'}</span>
                   </button>
                 </div>
+
+                <div className="integration-guide-box">
+                  <div className="integration-guide-title">
+                    <span>Component Integration Guide</span>
+                  </div>
+                  <div className="integration-guide-steps">
+                    <div className="integration-step">
+                      <div className="step-number">1</div>
+                      <div className="step-text">
+                        <strong>Locate Source Files:</strong> Open the folder <code>src/components/{activeCategory}/{activeComponent}/</code> in this repository.
+                      </div>
+                    </div>
+                    <div className="integration-step">
+                      <div className="step-number">2</div>
+                      <div className="step-text">
+                        <strong>Copy to Project:</strong> Copy the component's <code>.jsx</code> and <code>.scss</code> files into your project's components directory.
+                      </div>
+                    </div>
+                    <div className="integration-step">
+                      <div className="step-number">3</div>
+                      <div className="step-text">
+                        <strong>Import & Render:</strong> Copy the code block below, import the component in your layout, and mount it.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
                 <pre className="code-editor-box">
                   <code>{selectedCompData.code}</code>
                 </pre>
