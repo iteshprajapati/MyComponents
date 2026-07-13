@@ -86,19 +86,19 @@
   &.btn-success {
     background-color: var(--success);
     color: var(--text-on-primary);
-    &:hover { background-color: hsl(142, 71%, 40%); }
+    &:hover { background-color: var(--success-hover); }
   }
 
   &.btn-warning {
     background-color: var(--warning);
     color: var(--text-on-primary);
-    &:hover { background-color: hsl(38, 92%, 45%); }
+    &:hover { background-color: var(--warning-hover); }
   }
 
   &.btn-danger {
     background-color: var(--danger);
     color: var(--text-on-primary);
-    &:hover { background-color: hsl(350, 89%, 55%); }
+    &:hover { background-color: var(--danger-hover); }
   }
 }
 

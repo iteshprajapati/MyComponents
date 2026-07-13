@@ -20,14 +20,21 @@
   --secondary-light: rgba(100, 116, 139, 0.08);
 
   /* Semantic Colors */
-  --success: hsl(142, 10%, 40%);     /* Clean desaturated sage green */
-  --success-light: hsla(142, 10%, 40%, 0.1);
-  --warning: hsl(38, 12%, 45%);      /* Clean desaturated amber/sand */
-  --warning-light: hsla(38, 12%, 45%, 0.1);
-  --danger: hsl(350, 15%, 45%);      /* Clean desaturated muted red */
-  --danger-light: hsla(350, 15%, 45%, 0.1);
-  --info: hsl(199, 15%, 45%);        /* Clean desaturated steel blue */
-  --info-light: hsla(199, 15%, 45%, 0.1);
+  --success: hsl(142, 70%, 40%);     /* Clean emerald green */
+  --success-hover: hsl(142, 70%, 35%);
+  --success-light: hsla(142, 70%, 40%, 0.08);
+
+  --warning: hsl(38, 90%, 45%);      /* Clean amber gold */
+  --warning-hover: hsl(38, 90%, 40%);
+  --warning-light: hsla(38, 90%, 45%, 0.08);
+
+  --danger: hsl(350, 80%, 50%);      /* Clean red */
+  --danger-hover: hsl(350, 80%, 45%);
+  --danger-light: hsla(350, 80%, 50%, 0.08);
+
+  --info: hsl(199, 85%, 45%);        /* Clean steel blue */
+  --info-hover: hsl(199, 85%, 40%);
+  --info-light: hsla(199, 85%, 45%, 0.08);
 
   /* Light Theme Colors (Default) */
   --bg-app: #f8fafc;
@@ -100,6 +107,23 @@
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.4);
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
+
+  /* Semantic Color Dark Theme Overrides */
+  --success: hsl(142, 65%, 45%);
+  --success-hover: hsl(142, 65%, 40%);
+  --success-light: hsla(142, 65%, 45%, 0.15);
+
+  --warning: hsl(38, 80%, 50%);
+  --warning-hover: hsl(38, 80%, 45%);
+  --warning-light: hsla(38, 80%, 50%, 0.15);
+
+  --danger: hsl(350, 75%, 55%);
+  --danger-hover: hsl(350, 75%, 50%);
+  --danger-light: hsla(350, 75%, 55%, 0.15);
+
+  --info: hsl(199, 80%, 50%);
+  --info-hover: hsl(199, 80%, 45%);
+  --info-light: hsla(199, 80%, 50%, 0.15);
 }
 
 /* Base Resets */
