@@ -1,0 +1,121 @@
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: var(--font-sans);
+  width: 100%;
+  max-width: 320px;
+  
+  &.full-width {
+    max-width: 100%;
+  }
+
+  &.is-disabled {
+    opacity: 0.6;
+    .form-input {
+      cursor: not-allowed;
+      background-color: var(--bg-card-hover);
+    }
+  }
+}
+
+.form-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  display: inline-flex;
+  align-items: center;
+  
+  .label-required {
+    color: var(--danger);
+    margin-left: 2px;
+  }
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--border-color);
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  outline: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+
+  &::placeholder {
+    color: var(--text-muted);
+  }
+
+  &:focus {
+    border-color: var(--border-focus);
+    box-shadow: 0 0 0 3px var(--primary-light);
+  }
+
+  &.with-left-icon {
+    padding-left: 40px;
+  }
+
+  &.with-right-icon {
+    padding-right: 40px;
+  }
+}
+
+.input-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  pointer-events: none;
+  
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  &.icon-left {
+    left: 14px;
+  }
+
+  &.icon-right {
+    right: 14px;
+  }
+}
+
+/* Error States */
+.has-error {
+  .form-input {
+    border-color: var(--danger);
+    
+    &:focus {
+      box-shadow: 0 0 0 3px var(--danger-light);
+    }
+  }
+
+  .form-label {
+    color: var(--danger);
+  }
+}
+
+.input-error-msg {
+  font-size: 0.775rem;
+  font-weight: 500;
+  color: var(--danger);
+  margin-top: 2px;
+}
+
+.input-helper-msg {
+  font-size: 0.775rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}

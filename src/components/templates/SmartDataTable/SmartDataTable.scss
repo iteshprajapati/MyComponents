@@ -1,0 +1,139 @@
+.smart-data-table-wrapper {
+  font-family: var(--font-sans);
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100%;
+}
+
+.table-toolbar {
+  padding: 16px 20px;
+  border-bottom: 1.5px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.toolbar-search {
+  max-width: 320px;
+  width: 100%;
+  
+  .form-group {
+    max-width: 100% !important;
+  }
+}
+
+.toolbar-actions-alert {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: var(--primary-light);
+  padding: 4px 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-focus);
+}
+
+.selected-count-label {
+  font-size: 0.825rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* Table Responsive Container */
+.table-responsive-container {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.smart-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.9rem;
+  
+  th, td {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    white-space: nowrap;
+  }
+  
+  th {
+    background-color: var(--bg-card-hover);
+    color: var(--text-primary);
+    font-weight: 700;
+    user-select: none;
+    
+    &.cell-sortable {
+      cursor: pointer;
+      &:hover {
+        background-color: var(--border-color);
+      }
+    }
+  }
+
+  tr {
+    transition: background-color var(--transition-fast);
+    
+    &:hover {
+      background-color: var(--bg-card-hover);
+    }
+    
+    &.row-selected {
+      background-color: var(--primary-light);
+      
+      &:hover {
+        background-color: rgba(var(--primary-base), 0.15);
+      }
+    }
+  }
+}
+
+.cell-header-content {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.table-cell-checkbox {
+  width: 48px;
+  padding-right: 0 !important;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.table-no-data {
+  text-align: center;
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 32px !important;
+}
+
+/* Pagination Footer */
+.table-pagination-footer {
+  padding: 14px 20px;
+  border-top: 1.5px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  background-color: var(--bg-card-hover);
+}
+
+.pagination-info {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.pagination-controls {
+  display: flex;
+  gap: 8px;
+}

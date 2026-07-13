@@ -1,0 +1,141 @@
+.selection-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  cursor: pointer;
+  user-select: none;
+  
+  &.is-disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    
+    input {
+      cursor: not-allowed;
+    }
+  }
+}
+
+.selection-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hide native inputs */
+.real-checkbox, .real-radio, .real-switch {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* --- Checkbox Styling --- */
+.custom-checkbox {
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--border-color);
+  background-color: var(--bg-card);
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .checkmark {
+    width: 14px;
+    height: 14px;
+    color: var(--text-on-primary);
+    stroke-dasharray: 20;
+    stroke-dashoffset: 20;
+    transition: stroke-dashoffset 0.2s ease-in-out;
+  }
+}
+
+.real-checkbox:checked + .custom-checkbox {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  
+  .checkmark {
+    stroke-dashoffset: 0;
+  }
+}
+
+.real-checkbox:focus-visible + .custom-checkbox {
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+/* --- Radio Styling --- */
+.custom-radio {
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--border-color);
+  background-color: var(--bg-card);
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .radio-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: var(--radius-full);
+    background-color: var(--text-on-primary);
+    transform: scale(0);
+    transition: transform var(--transition-fast);
+  }
+}
+
+.real-radio:checked + .custom-radio {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  
+  .radio-dot {
+    transform: scale(1);
+  }
+}
+
+.real-radio:focus-visible + .custom-radio {
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+/* --- Switch Styling --- */
+.custom-switch {
+  width: 44px;
+  height: 24px;
+  border-radius: var(--radius-full);
+  background-color: var(--border-color);
+  position: relative;
+  transition: background-color var(--transition-normal);
+  
+  .switch-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: var(--radius-full);
+    background-color: #ffffff;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-normal);
+  }
+}
+
+.real-switch:checked + .custom-switch {
+  background-color: var(--primary);
+  
+  .switch-thumb {
+    transform: translateX(20px);
+  }
+}
+
+.real-switch:focus-visible + .custom-switch {
+  box-shadow: 0 0 0 3px var(--primary-light);
+}

@@ -1,0 +1,241 @@
+.dashboard-layout-shell {
+  font-family: var(--font-sans);
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--bg-app);
+}
+
+/* --- Left Sidebar --- */
+.layout-sidebar {
+  width: 260px;
+  background-color: var(--bg-sidebar);
+  border-right: 1.5px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  transition: width var(--transition-normal) cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 100;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.sidebar-brand-header {
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.brand-logo-icon {
+  font-size: 1.25rem;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-logo-text {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+}
+
+.sidebar-toggle-btn {
+  position: absolute;
+  right: -14px;
+  top: 24px;
+  width: 26px;
+  height: 26px;
+  border-radius: var(--radius-full);
+  background-color: var(--bg-card);
+  border: 1.5px solid var(--border-color);
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+  
+  &:hover {
+    background-color: var(--primary-light);
+    color: var(--primary);
+    border-color: var(--primary-light);
+  }
+}
+
+.sidebar-nav-links {
+  flex: 1;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sidebar-nav-item {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  width: 100%;
+  text-align: left;
+
+  &:hover {
+    background-color: var(--bg-card-hover);
+    color: var(--text-primary);
+  }
+
+  &.is-active {
+    background-color: var(--primary-light);
+    color: var(--primary);
+  }
+}
+
+.sidebar-footer-row {
+  padding: 16px;
+  border-top: 1px solid var(--border-color);
+  
+  .logout-btn:hover {
+    background-color: var(--danger-light);
+    color: var(--danger);
+  }
+}
+
+/* Collapsed Sidebar states */
+.sidebar-collapsed {
+  .layout-sidebar {
+    width: 72px;
+  }
+  
+  .brand-logo-text, .nav-item-label, .user-text-info {
+    opacity: 0;
+    pointer-events: none;
+    display: none;
+  }
+  
+  .sidebar-brand-header {
+    justify-content: center;
+    padding: 20px 0;
+  }
+  
+  .sidebar-nav-item {
+    justify-content: center;
+    padding: 12px 0;
+  }
+  
+  .sidebar-toggle-btn svg {
+    transform: rotate(180deg);
+  }
+}
+
+/* --- Right Layout Wrapper --- */
+.layout-main-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0; /* fixes grid item flex shrink issues */
+}
+
+.layout-top-navbar {
+  height: 70px;
+  background-color: var(--bg-card);
+  border-bottom: 1.5px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  flex-shrink: 0;
+  
+  @media (max-width: 600px) {
+    padding: 0 16px;
+  }
+}
+
+.sidebar-hamburger-menu {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: var(--radius-sm);
+  
+  &:hover {
+    background-color: var(--bg-card-hover);
+  }
+  
+  @media (max-width: 768px) {
+    display: flex;
+  }
+}
+
+.navbar-quick-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  
+  @media (max-width: 600px) {
+    display: none;
+  }
+}
+
+.navbar-right-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.navbar-divider-line {
+  width: 1px;
+  height: 24px;
+  background-color: var(--border-color);
+}
+
+.navbar-user-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-text-info {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  transition: opacity var(--transition-fast);
+}
+
+.user-name {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.user-role {
+  font-size: 0.775rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.layout-content-body {
+  flex: 1;
+  padding: 32px;
+  overflow-y: auto;
+  
+  @media (max-width: 600px) {
+    padding: 16px;
+  }
+}

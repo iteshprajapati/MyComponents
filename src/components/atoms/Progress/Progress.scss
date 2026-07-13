@@ -1,0 +1,99 @@
+/* Spinner Styles */
+.spinner-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  
+  svg {
+    animation: rotate 1.2s linear infinite;
+    width: 100%;
+    height: 100%;
+  }
+
+  .spinner-track {
+    opacity: 0.15;
+  }
+}
+
+/* Spinner Colors */
+.spinner-primary { color: var(--primary); }
+.spinner-secondary { color: var(--secondary); }
+.spinner-success { color: var(--success); }
+.spinner-warning { color: var(--warning); }
+.spinner-danger { color: var(--danger); }
+
+/* Spinner Sizes */
+.spinner-sm {
+  width: 16px;
+  height: 16px;
+}
+.spinner-md {
+  width: 32px;
+  height: 32px;
+}
+.spinner-lg {
+  width: 48px;
+  height: 48px;
+}
+
+/* Linear Progress Bar Styles */
+.linear-progress-container {
+  width: 100%;
+  font-family: var(--font-sans);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.progress-value-label {
+  align-self: flex-end;
+  font-size: 0.775rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.progress-track {
+  width: 100%;
+  background-color: var(--border-color);
+  border-radius: var(--radius-full);
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &.progress-bar-primary { background-color: var(--primary); }
+  &.progress-bar-secondary { background-color: var(--secondary); }
+  &.progress-bar-success { background-color: var(--success); }
+  &.progress-bar-warning { background-color: var(--warning); }
+  &.progress-bar-danger { background-color: var(--danger); }
+}
+
+.progress-bar-indeterminate {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  animation: indeterminate 1.5s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+  transform-origin: left;
+}
+
+@keyframes rotate {
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes indeterminate {
+  0% {
+    transform: translateX(-100%) scaleX(0.2);
+  }
+  50% {
+    transform: translateX(0) scaleX(0.8);
+  }
+  100% {
+    transform: translateX(100%) scaleX(0.2);
+  }
+}

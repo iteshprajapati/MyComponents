@@ -1,0 +1,147 @@
+.auth-screen-wrapper {
+  font-family: var(--font-sans);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  padding: 24px;
+  width: 100%;
+}
+
+.auth-card-container {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  max-width: 440px;
+  width: 100%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  
+  @media (max-width: 600px) {
+    padding: 24px;
+  }
+}
+
+.auth-brand-logo-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.auth-logo-icon {
+  font-size: 1.35rem;
+  color: var(--primary);
+}
+
+.auth-brand-name {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+}
+
+.auth-form-pane {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.auth-pane-headings {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: center;
+}
+
+.auth-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.auth-sub {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.auth-inputs-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  
+  .form-group {
+    max-width: 100% !important;
+  }
+}
+
+.auth-options-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+
+.auth-link-btn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-weight: 600;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+  
+  &:hover {
+    color: var(--primary);
+    text-decoration: underline;
+  }
+
+  &.primary {
+    color: var(--primary);
+    font-weight: 700;
+    &:hover { color: var(--primary-hover); }
+  }
+}
+
+.auth-pane-footer {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.back-to-login-btn {
+  background: none;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  align-self: flex-start;
+  transition: color var(--transition-fast);
+  
+  &:hover {
+    color: var(--primary);
+  }
+}
+
+/* Slide/Fade Animations */
+.animation-fade-in {
+  animation: authFadeIn 0.35s cubic-bezier(0, 0, 0.2, 1) forwards;
+}
+
+@keyframes authFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

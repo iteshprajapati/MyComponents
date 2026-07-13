@@ -1,0 +1,189 @@
+.onboarding-wizard-wrapper {
+  font-family: var(--font-sans);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  padding: 24px;
+  width: 100%;
+}
+
+.onboarding-wizard-container {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  max-width: 680px;
+  width: 100%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  
+  @media (max-width: 600px) {
+    padding: 24px;
+    gap: 24px;
+  }
+}
+
+/* Step Indicator Bar */
+.wizard-step-progress-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    
+    .step-connecting-bar {
+      display: none;
+    }
+  }
+}
+
+.wizard-step-node {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  flex: 1;
+
+  .node-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-full);
+    border: 2px solid var(--border-color);
+    background-color: var(--bg-card);
+    color: var(--text-muted);
+    font-weight: 700;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-normal);
+    z-index: 2;
+  }
+
+  .node-text-block {
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+  }
+
+  .step-num-label {
+    font-size: 0.725rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+  }
+
+  .step-title-lbl {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    transition: color var(--transition-normal);
+  }
+
+  /* Connecting Progress Rules */
+  .step-connecting-bar {
+    position: absolute;
+    top: 16px;
+    left: calc(100% - 10px);
+    right: 10px;
+    height: 2px;
+    background-color: var(--border-color);
+    z-index: 1;
+    transition: background-color var(--transition-normal);
+    width: 45%;
+  }
+
+  /* Node States */
+  &.active {
+    .node-circle {
+      border-color: var(--primary);
+      color: var(--primary);
+      box-shadow: 0 0 0 4px var(--primary-light);
+    }
+    .step-title-lbl {
+      color: var(--text-primary);
+    }
+  }
+
+  &.completed {
+    .node-circle {
+      border-color: var(--success);
+      background-color: var(--success);
+      color: #ffffff;
+    }
+    .step-title-lbl {
+      color: var(--text-primary);
+    }
+    .step-connecting-bar {
+      background-color: var(--success);
+    }
+  }
+}
+
+/* Wizard Form Body */
+.wizard-form-body {
+  min-height: 200px;
+}
+
+.wizard-form-pane {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  
+  .form-group {
+    max-width: 100% !important;
+  }
+}
+
+.pane-heading {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.pane-sub-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.toggles-form-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Wizard Buttons Footer */
+.wizard-buttons-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1.5px solid var(--border-color);
+  padding-top: 24px;
+}
+
+/* Animation slider helper */
+.animation-slide-in {
+  animation: slideIn 0.35s cubic-bezier(0, 0, 0.2, 1) forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
